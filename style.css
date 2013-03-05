@@ -1,0 +1,83 @@
+﻿h5 {
+    color: black; 
+    border-left:3px solid black;  
+    border-bottom:1px solid black;  
+    padding: 0px 10px;
+}
+h6 {
+    color: blue;
+    border-bottom:1px solid blue;  
+    padding: 0px 10px;
+}
+h2 {
+    color: #800000;
+    text-shadow: 1px 1px 0px #ffffff, 3px 3px 2px #663333;
+}
+a {
+ text-decoration: none;
+}
+body{
+color:#333;
+font-family:Arial, sans-serif;
+background-color: #E3E3E3;
+}
+#mss{
+   /* ▼CSS3 */
+   border-top-right-radius: 15px;  /* 右上 */
+   border-bottom-right-radius: 15px; /* 右下 */
+
+   /* ▼Safari,Chrome */
+   -webkit-border-top-right-radius: 15px;  /* 右上 */
+   -webkit-border-bottom-right-radius: 15px; /* 右下 */
+
+   /* ▼共通装飾 */
+   border: 1px #800000 solid;     /* 枠線の装飾 */
+   background-color: #fffaf0;   /* 背景色 */
+}
+#main{
+   padding: 10px;
+   border: 1px solid gray;
+   background-color: #ffffff;
+   border-radius: 15px;
+   -webkit-border-radius: 20px;
+   width:290px;
+   margin:auto;
+}
+#mod{
+   padding: 10px;
+   border: 2px solid red;
+   background-color: #FFE4B5;
+   border-radius: 15px;
+   -webkit-border-radius: 20px;
+   width:290px;
+   margin:auto;
+}
+#top{
+   padding: 2px;
+   border: 1px solid #006400;
+   background-color: #D6EBF5;
+   border-radius: 15px;
+   -webkit-border-radius: 20px;
+   width:290px;
+   margin:auto;
+}
+#ts{
+   padding: 10px;
+   background-color: #FFFFFF;
+   border-radius: 15px;
+}
+input{
+font-size: 25px;
+}
+h4 {
+    color: black; 
+    border-left:3px solid black;  
+    border-bottom:1px solid black;  
+    padding: 0px 10px;
+}
+#modh {
+    color: red; 
+    border-left:3px solid red;  
+    border-bottom:1px solid red;  
+    padding: 0px 10px;
+}

@@ -1,0 +1,46 @@
+﻿<?php
+//判別
+if(isset($_POST['user'])){
+  $fold=$_POST['user'];
+  if (preg_match('/[^a-zA-Z0-9]/',$fold)||empty($fold)||$fold=='hidden1678256f'){
+    // 全角有り
+    $ercom='空白や全角など他の文字が入っているので，作成されませんでした。<br>
+    <a href="./">[戻る]</a>';
+    }else{
+    // 全角無し
+    exec ("cp ../../game ./ -r");
+    exec ("mv game $fold");
+    exec ("chmod -Rf 777 $fold");
+    ;}
+  }else{
+  $ercom='エラーが発生しました。<a href="./">戻る</a>';
+  }
+//挙動をここで指定
+if(!isset($ercom)){
+	$dir_name= basename(dirname($_SERVER['PHP_SELF']));
+	$uri = $_SERVER['HTTP_HOST'];
+	header('Location: http://'.$uri.'/'.$dir_name.'/'.$fold.'/play.php');
+	exit;
+}else{
+echo'<!DOCTYPE HTML>
+<html>
+<head>
+<title>カタンのサイコロたち</title>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name = "viewport" content = "width=320,user-scalable=no" />
+<link rel="apple-touch-icon-precomposed" href="icon.png" />
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="stylesheet" href="/style.css" type="text/css">
+</head>
+<body>
+<div id="top">
+<h2>カタンのサイコロたち</h2>
+<center><img src="/logo.jpg"></center><br>
+'.$ercom.'
+<br></div>
+</body></html>';
+}
+?>

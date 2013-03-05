@@ -1,0 +1,47 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>カタンのサイコロたち</title>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name = "viewport" content = "width=320,user-scalable=no" />
+<link rel="apple-touch-icon-precomposed" href="/icon.png" />
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="stylesheet" href="/style.css" type="text/css">
+</head>
+<body>
+
+<div id="top">
+<h2>カタンのサイコロたち</h2>
+<center><img src="/logo.jpg"></center><br>
+<?php $dir_name= basename(dirname($_SERVER['PHP_SELF']));
+echo $dir_name;?>さんのページ
+<h4>新しいゲームを作成</h4>
+<form action="start.html" method="POST">
+<input type="text" value="" name="user" style="width: 250px;"><br>
+<input type="submit" value="ゲームを作成" name="submit">
+</form>
+<h4>過去のゲーム</h4>
+<ul>
+<?php
+$dir=array();
+$dir_sorted = array();
+foreach (scandir('./') as $entry) {
+if($entry!='.'&&$entry!='..'&&is_dir($entry)&&$entry!='hidden'){
+$playtime = gmdate("Y/m/d H:i",9*3600+filemtime($entry));
+$dir[filemtime($entry)] = array('name' => $entry, 'playtime' => $playtime);
+}
+}
+krsort($dir);
+foreach ($dir as $entry) {
+array_push($dir_sorted, $entry);
+}
+foreach ($dir_sorted as $entry) {
+
+echo '<li><a href="'.$entry['name'].'/result.php">'.$entry['name'].' ('.$entry['playtime'].')</a></li>';
+}
+?>
+</ul></div>
+</body></html>
